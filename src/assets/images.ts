@@ -1,1 +1,2 @@
 //images.tsx
+export {};
