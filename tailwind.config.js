@@ -10,6 +10,9 @@ module.exports = {
                 gray200: "#292e33",
                 gray300: "#212529",
             },
+            screens: {
+                "2xl": "1440px",
+            },
         },
     },
     plugins: [

@@ -8,8 +8,8 @@ interface IMainLayoutProps {
 const MainLayout = ({ children }: IMainLayoutProps) => {
     return (
         <main className='flex items-center justify-center'>
-            <section className='w-3/5 flex items-center justify-between'>
-                <article>
+            <section className='w-3/5 flex items-center justify-center 2xl:justify-between'>
+                <article className='hidden 2xl:block'>
                     <p className='mb-[50px] text-5xl font-semibold leading-snug text-gray000 cs-text-shadow-primary'>
                         안녕하세요.
                         <br />
@@ -18,7 +18,7 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
                     </p>
                     <IconButton text='github 구경하기' link='#' icon={githubIcon} />
                 </article>
-                <article className='w-[430px] h-screen bg-gray300'>{children}</article>
+                <article className='min-w-[430px] h-screen bg-gray300'>{children}</article>
             </section>
         </main>
     );
