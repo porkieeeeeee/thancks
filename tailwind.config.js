@@ -17,17 +17,30 @@ module.exports = {
     },
     plugins: [
         function ({ addUtilities }) {
-            addUtilities(
-                {
-                    ".cs-text-shadow-none": {
-                        textShadow: "0 0 0",
+            const newUtilities = {
+                ".cs-scrollbar": {
+                    "&::-webkit-scrollbar": {
+                        width: "6px",
+                        marginLeft: "3px",
                     },
-                    ".cs-text-shadow-primary": {
-                        textShadow: "0 4px 4px #4c6ef5",
+                    "&::-webkit-scrollbar-track": {
+                        background: "#ffffff30",
+                        borderRadius: "3px",
+                    },
+                    "&::-webkit-scrollbar-thumb": {
+                        background: "#ffffff90",
+                        borderRadius: "3px",
                     },
                 },
-                ["responsive", "hover"]
-            );
+                ".cs-text-shadow-none": {
+                    textShadow: "0 0 0",
+                },
+                ".cs-text-shadow-primary": {
+                    textShadow: "0 4px 4px #4c6ef5",
+                },
+            };
+
+            addUtilities(newUtilities, ["responsive", "hover"]);
         },
     ],
 };
