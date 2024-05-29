@@ -1,5 +1,7 @@
+import MainPage from "views/pages/MainPage";
+
 function App() {
-    return <div>감사합니당</div>;
+    return <MainPage />;
 }
 
 export default App;
