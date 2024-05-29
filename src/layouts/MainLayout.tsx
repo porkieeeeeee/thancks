@@ -18,7 +18,9 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
                     </p>
                     <IconButton text='github 구경하기' link='#' icon={githubIcon} />
                 </article>
-                <article className='min-w-[430px] h-screen bg-gray300'>{children}</article>
+                <article className='min-w-[430px] h-screen flex items-center bg-gray300'>
+                    <div className='relative w-[340px] h-[690px] m-auto mt-[100px] flex flex-col'>{children}</div>
+                </article>
             </section>
         </main>
     );
