@@ -1,3 +1,6 @@
+import { githubIcon } from "assets/imagesManagement";
+import IconButton from "components/atom/IconButton";
+
 interface IMainLayoutProps {
     children: React.ReactNode;
 }
@@ -7,13 +10,13 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
         <main className='flex items-center justify-center'>
             <section className='w-3/5 flex items-center justify-between'>
                 <article>
-                    <p className='text-5xl font-semibold leading-snug text-white'>
+                    <p className='mb-[50px] text-5xl font-semibold leading-snug text-gray000 cs-text-shadow-primary'>
                         안녕하세요.
                         <br />
-                        <span className='text-blue-600'>포키 응원</span>하는
+                        <span className='text-primary cs-text-shadow-none'>포키 응원</span>하는
                         <br />웹 서비스 입니다.
                     </p>
-                    <button>github 구경하기</button>
+                    <IconButton text='github 구경하기' link='#' icon={githubIcon} />
                 </article>
                 <article className='w-[430px] h-screen bg-gray300'>{children}</article>
             </section>

@@ -3,6 +3,12 @@
 @tailwind utilities;
 @charset "UTF-8";
 
+@layer components {
+    .custom-text-button {
+        @apply text-gray003 text-xl font-semibold;
+    }
+}
+
 html,
 body {
     width: 100%;
