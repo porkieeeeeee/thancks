@@ -40,7 +40,7 @@ module.exports = {
                 },
             };
 
-            addUtilities(newUtilities, ["responsive", "hover"]);
+            addUtilities(newUtilities, ["responsive"]);
         },
     ],
 };

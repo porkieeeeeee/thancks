@@ -19,7 +19,7 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
                     <IconButton text='github 구경하기' link='#' icon={githubIcon} />
                 </article>
                 <article className='min-w-[430px] h-screen flex items-center bg-gray300'>
-                    <div className='relative w-[340px] h-[690px] m-auto mt-[100px] flex flex-col'>{children}</div>
+                    <div className='relative w-[340px] h-[690px] m-auto mt-[70px] flex flex-col'>{children}</div>
                 </article>
             </section>
         </main>
