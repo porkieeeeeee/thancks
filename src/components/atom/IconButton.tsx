@@ -11,7 +11,7 @@ interface IIconButtonProps extends IStyleIconButtonProps {
 
 const IconButton = ({ text, link, icon }: IIconButtonProps) => {
     return (
-        <Container href={link} icon={icon}>
+        <Container href={link} target='_blank' icon={icon}>
             {text}
         </Container>
     );

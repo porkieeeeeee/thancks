@@ -16,7 +16,11 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
                         <span className='text-primary cs-text-shadow-none'>포키 응원</span>하는
                         <br />웹 서비스 입니다.
                     </p>
-                    <IconButton text='github 구경하기' link='#' icon={githubIcon} />
+                    <IconButton
+                        text='github 구경하기'
+                        link='https://github.com/porkieeeeeee/thancks'
+                        icon={githubIcon}
+                    />
                 </article>
                 <article className='min-w-[430px] h-screen flex items-center bg-gray300'>
                     <div className='relative w-[340px] h-[690px] m-auto mt-[70px] flex flex-col'>{children}</div>
