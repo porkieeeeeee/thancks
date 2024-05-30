@@ -3,9 +3,15 @@ import { useEffect, useRef, useState } from "react";
 
 const MessageCardBox = () => {
     const [hasScroll, setHasScroll] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        const storedMessage = localStorage.getItem("text");
+        if (storedMessage) {
+            setMessage(storedMessage);
+        }
+
         const checkScroll = () => {
             const element = containerRef.current;
             const hasVerticalScrollbar = element ? element.scrollHeight > element.clientHeight : false;
@@ -36,16 +42,7 @@ const MessageCardBox = () => {
             ref={containerRef}
             className='absolute top-40 h-[400px] overflow-auto flex flex-col gap-y-2.5 cs-scrollbar'
         >
-            <MessageCard
-                hasScroll={hasScroll}
-                text='나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. '
-            />
-            <MessageCard
-                hasScroll={hasScroll}
-                text='나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. 나는자연을사랑합니다. '
-            />
-            <MessageCard hasScroll={hasScroll} text='나는자연을사랑합니다.' />
-            <MessageCard hasScroll={hasScroll} text='나는자연을사랑합니다.' />
+            <MessageCard hasScroll={hasScroll} text={message} />
         </div>
     );
 };
