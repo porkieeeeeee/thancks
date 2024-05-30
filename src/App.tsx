@@ -1,7 +1,6 @@
-import MainPage from "views/pages/MainPage";
-
+import RouterPage from "routers";
 function App() {
-    return <MainPage />;
+    return <RouterPage />;
 }
 
 export default App;
