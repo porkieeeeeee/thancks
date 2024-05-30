@@ -40,7 +40,7 @@ const MessageCardBox = () => {
     return (
         <div
             ref={containerRef}
-            className='absolute top-40 h-[400px] overflow-auto flex flex-col gap-y-2.5 cs-scrollbar'
+            className='absolute top-40 h-[400px] overflow-auto w-full flex flex-col gap-y-2.5 cs-scrollbar'
         >
             <MessageCard hasScroll={hasScroll} text={message} />
         </div>
