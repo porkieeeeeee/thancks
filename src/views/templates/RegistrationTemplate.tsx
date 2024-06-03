@@ -18,7 +18,13 @@ const RegistrationTemplate = () => {
         if (text.trim() === "") {
             showToast({ type: EToastType.ERROR, message: "빈칸은 입력할 수 없어요.😅" });
         } else {
-            localStorage.setItem("text", text);
+            const storedMessages = localStorage.getItem("messages");
+            const messagesArray = storedMessages ? JSON.parse(storedMessages) : [];
+
+            messagesArray.push(text);
+
+            localStorage.setItem("messages", JSON.stringify(messagesArray));
+
             showToast({ type: EToastType.SUCCESS, message: "응원해주셔서 감사해요!🥳" });
             navigate("/");
         }

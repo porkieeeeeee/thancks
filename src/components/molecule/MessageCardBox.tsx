@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from "react";
 
 const MessageCardBox = () => {
     const [hasScroll, setHasScroll] = useState<boolean>(false);
-    const [message, setMessage] = useState<string>("");
+    const [messages, setMessages] = useState<string[]>([]);
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        const storedMessage = localStorage.getItem("text");
-        if (storedMessage) {
-            setMessage(storedMessage);
+        const storedMessages = localStorage.getItem("messages");
+        if (storedMessages) {
+            setMessages(JSON.parse(storedMessages));
         }
 
         const checkScroll = () => {
@@ -42,7 +42,9 @@ const MessageCardBox = () => {
             ref={containerRef}
             className='absolute top-40 h-[400px] overflow-auto w-full flex flex-col gap-y-2.5 cs-scrollbar'
         >
-            <MessageCard hasScroll={hasScroll} text={message} />
+            {messages.map((message, index) => (
+                <MessageCard key={index} hasScroll={hasScroll} text={message} />
+            ))}
         </div>
     );
 };
