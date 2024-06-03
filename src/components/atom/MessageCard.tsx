@@ -15,11 +15,12 @@ const MessageCard = ({ text, hasScroll }: IMessageCardProps) => {
 };
 
 const Container = styled.div<{ hasScroll: boolean }>`
-    ${tw`min-w-full min-h-[48px] py-[16px] pl-[84px] pr-[14px] bg-gray000 rounded break-all`};
+    ${tw`w-full h-fit py-[16px] pl-[84px] pr-[14px] bg-gray000 rounded break-all`};
 
     ${({ hasScroll }) =>
         hasScroll &&
         css`
+            width: calc(100% - 4px);
             margin-right: 4px;
         `}
 `;
